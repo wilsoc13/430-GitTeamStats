@@ -1,3 +1,4 @@
+﻿using GitTeamStats.Models;
 using GitTeamStats.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,15 +15,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GitTeamStats {
+namespace GitTeamStats.Views
+{
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class LoginView : UserControl
+    {
+        public LoginView()
+        {
             InitializeComponent();
+        }
 
-            DataContext = new LoginVM();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).DataContext = new ProjectVM();
         }
     }
 }

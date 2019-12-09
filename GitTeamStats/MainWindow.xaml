@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitTeamStats"
+        xmlns:views="clr-namespace:GitTeamStats.Views"
+        xmlns:viewmodels="clr-namespace:GitTeamStats.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="GitTeamStats" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LoginVM}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ProjectVM}">
+            <views:ProjectView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MainGridVM}">
+            <views:MainGridView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:CompareVM}">
+            <views:CompareView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:GraphVM}">
+            <views:GraphView/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <ContentControl Content="{Binding}" />
     </Grid>
 </Window>
